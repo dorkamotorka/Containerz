@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: test-1
+  template:
+    metadata:
+      labels:
+        env: test-1
+    spec:
+      containers:
+        - name: first-container
+          image: first
+        - name: second-container
+          image: second
